@@ -17,3 +17,6 @@
       <li>We made use of an input box so that the user can add their name to the page, each coloured button generates the name of a pokemon of that type and you can keep or release the pokemon as it is generated.
       <li> If we had more time we would have added pictures to acompany the randomly generated pokemon names.
         <li> I have really felt the benefit of pair programming this week, it has been super helpful to have somebody to talk things through with and bounce ideas off - two heads are better than one!
+         </ul>
+
+ <p>View the page <a href="https://rachelalk.github.io/pokemonAPI/">here</a></p>
