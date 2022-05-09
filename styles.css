@@ -1,0 +1,41 @@
+body{
+    font-family: 'Playfair Display', serif;
+}
+
+.pokeButtons{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.keepRel{
+    height: 20px;
+    width: 100px;
+    justify-content: centre;
+}
+
+.chooser{
+  border: none;
+  height: 100px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 20px;
+  width: 100px;
+}
+
+#grassButton{
+    background-color:green;
+}
+
+#waterButton{
+    background-color:blue;
+}
+
+#fireButton{
+    background-color:red;
+}
+

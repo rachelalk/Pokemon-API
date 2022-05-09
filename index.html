@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>PokeSquad Assemble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+    <h1 class="pokeHeader">WELCOME TO POKESQUAD ASSEMBLE!</h1>
+    <p>What is your name trainer?</p>
+    <input id = "userName" placeholder="Enter name"></input> 
+    <button id="submit">Submit</button>
+    <h2 id="chooseTitle"> Choose a Pokemon type below! </h2>
+    <div class="pokeButtons">   
+        <button class="chooser" id="grassButton"></button>
+        <button class="chooser" id="waterButton"></button>
+        <button class="chooser" id="fireButton"></button>
+    </div>
+    <div class="pokeResult">
+        <h2>The pokemon you have captured is...</h2>
+        <p class="results"></p>
+    </div>
+    
+    <div class ="pokeButtons">
+        <button class="keepRel" id="keep"></button>
+        <button class="keepRel" id="release"></button>
+    </div>
+    <div class="archive">
+        <p id="pokedexReport">Your PokeSquad archive is:</p>
+        <ol id="pokeDex">
+        </ol>
+    </div>
+    <script src ="main.js"></script>
+</body>
+</html>
