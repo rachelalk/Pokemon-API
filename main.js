@@ -188,3 +188,6 @@ buWater.addEventListener("click", handleClickWater);
 
 //keep or release? ✅
 
+//if keep play voice clip?
+
+//if release sad team rocket
