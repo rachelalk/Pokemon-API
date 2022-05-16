@@ -10,11 +10,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
+<body>
     <h1 class="pokeHeader">WELCOME TO POKESQUAD ASSEMBLE!</h1>
-    <p>What is your name trainer?</p>
-    <input id = "userName" placeholder="Enter name"></input> 
-    <button id="submit">Submit</button>
-    <h2 id="chooseTitle"> Choose a Pokemon type below! </h2>
+    <div class="pokeEntry">
+        <p>What is your name, trainer?</p>
+        <input id = "userName" placeholder="Enter name"></input> 
+        <button id="submit">Submit</button>
+    </div>
+    <hr>
+    <div class="chooseTitle">
+        <h2 id="userDisplay"> Choose a Pokemon type below to get started. </h2>
+        <p> You can add as many Pokemon to your Dex as you like.</p>
+    </div>
     <div class="pokeButtons">   
         <button class="chooser" id="grassButton"></button>
         <button class="chooser" id="waterButton"></button>
@@ -23,12 +30,12 @@
     <div class="pokeResult">
         <h2>The pokemon you have captured is...</h2>
         <p class="results"></p>
+        <div class ="pokeKR">
+            <button class="keepRel" id="keep"></button>
+            <button class="keepRel" id="release"></button>
+        </div>
     </div>
-    
-    <div class ="pokeButtons">
-        <button class="keepRel" id="keep"></button>
-        <button class="keepRel" id="release"></button>
-    </div>
+        
     <div class="archive">
         <p id="pokedexReport">Your PokeSquad archive is:</p>
         <ol id="pokeDex">

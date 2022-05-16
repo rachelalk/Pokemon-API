@@ -20,7 +20,7 @@ let buRel = document.querySelector('#release');
 let pokeDex = document.querySelector('#pokeDex');
 let userInput = document.querySelector("#userName");
 let submit = document.querySelector("#submit");
-let chooseTitle = document.querySelector("#chooseTitle");
+let chooseTitle = document.querySelector('#userDisplay');
 
 // LABELLING BUTTONS
 buGrass.innerText = "GRASS POKEMON";
@@ -29,18 +29,16 @@ buFire.innerText = "FIRE POKEMON";
 buKeep.innerText = "Keep in Pokedex!";
 buRel.innerText = "Release to wild!";
 
+// RETRIEVING USERNAME
 function createUsername () {
   let trainerName = userInput.value;
   chooseTitle.innerText = `${trainerName}, choose a Pokemon type below!`
 } 
-
 function clearInput() {
 document.getElementById('userName').value=null;
 }
-
 submit.addEventListener("click", createUsername);
 submit.addEventListener("click", clearInput);
-
 
 // USING THE 'TYPE' VALUE TO SELECT GRASS, FIRE AND WATER POKEMON
 async function getGrass(){
@@ -58,13 +56,15 @@ async function getGrass(){
     }
   } 
   getGrass()
-
-  // WAIT FOR THE API TO RESOLVE AND GET A RANDOM GRASS POKEMON
+  // WAIT FOR THE API TO RESOLVE AND GET A RANDOM GRASS POKEMON 
+  // (THIS IS TO TEST FUNCTIONALITY)
 setTimeout(async function printGrass(){
    randomGrass = grassNames[Math.floor(Math.random() * grassNames.length)];
   console.log(randomGrass);
   }, 1500);
 
+
+  // WAIT FOR THE API TO RESOLVE AND POPULATE THE FIRE POKEMON LIST
  async function getFire(){
     const response = await fetch('https://pokeapi.co/api/v2/type/10');
     const data = await response.json();
@@ -76,16 +76,16 @@ setTimeout(async function printGrass(){
       }
     console.log(fireNames);
   } 
-  getFire()
-
-  
+  getFire()  
 // WAIT FOR THE API TO RESOLVE AND GET A RANDOM fire POKEMON
+// (functionality test
 setTimeout(async function printFire(){
   const randomFire = fireNames[Math.floor(Math.random() * fireNames.length)];
   console.log(randomFire);
 }, 1500);
 
   
+// POPULATING THE WATER POKEMON LIST
 async function getWater(){
    const response = await fetch('https://pokeapi.co/api/v2/type/11');
    const data = await response.json();
@@ -99,6 +99,7 @@ async function getWater(){
  getWater()
 
  // WAIT FOR THE API TO RESOLVE AND GET A RANDOM water POKEMON
+ // (Functionality test)
 setTimeout(async function printWater(){
   const randomWater = waterNames[Math.floor(Math.random() * waterNames.length)];
   console.log(randomWater);
@@ -110,6 +111,7 @@ setTimeout(async function printWater(){
 
 /////////// BUTTON FUNCTIONALITY
 // FUNCTIONS + EVENT LISTENERS TO CONNECT THESE BUTTONS TO OUR LISTS OF POKEMON
+// FUNCTIONS + EVENT LISTENERS TO KEEP OR DISCARD POKEMON AS REQUIRED
 
 // IF: GRASS CLICKED
 function handleClickGrass(){
@@ -121,6 +123,11 @@ function handleClickGrass(){
     pokeDex.append(chosenPoke);
     resultsLoc.innerText = null;
   }
+  function clearPokemon() {
+    resultsLoc.textContent = null;
+    chosenPoke = "";
+  }
+  buRel.addEventListener("click", clearPokemon);
   buKeep.addEventListener("click", addToDex);
 }
 buGrass.addEventListener("click", handleClickGrass);
@@ -136,6 +143,11 @@ function handleClickFire(){
     pokeDex.append(chosenPoke);
     resultsLoc.innerText = null;
   }
+  function clearPokemon() {
+    resultsLoc.textContent = null;
+    chosenPoke = "";
+  }
+  buRel.addEventListener("click", clearPokemon);
   buKeep.addEventListener("click", addToDex);
 }
 buFire.addEventListener("click", handleClickFire);
@@ -151,35 +163,16 @@ function handleClickWater(){
     pokeDex.append(chosenPoke);
     resultsLoc.innerText = null;
   }
+  function clearPokemon() {
+    resultsLoc.textContent = null;
+    chosenPoke = "";
+  }
+  buRel.addEventListener("click", clearPokemon);
   buKeep.addEventListener("click", addToDex);
 }
-
 buWater.addEventListener("click", handleClickWater);
 
-function clearPokemon() {
-  resultsLoc.innerText = null;
-}
 
-buRel.addEventListener("click", clearPokemon);
-
-// IF: KEEP CLICKED
-
-// Create function which turns the random pokemon into a list item
-// Append that list item to the archive
-// Event listener on keep button
-
-// IF: RELEASE CLICKED
-// Create function which displays text acknowledging the discard
-// Event listener on release button
-  
-//FILEPATH: grassData[0].pokemon[0].pokemon.name
-/////////////////////
-// SELECTING RANDOM POKEMON
-// grassNames.push(grassData[0].pokemon[0].pokemon.name);
-// console.log(grassNames);
-// const randomGrass = grassData[Math.floor(Math.random() * grassData.length)];
-// console.log(data.types[0].type.name);
- 
 
 
 //## Pokesquad Assemble! - TO DO LIST
@@ -193,8 +186,5 @@ buRel.addEventListener("click", clearPokemon);
 
 //generate random pokemon of that type ✅
 
-//keep or release?
+//keep or release? ✅
 
-//if keep play voice clip?
-
-//if release sad team rocket
