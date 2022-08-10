@@ -19,4 +19,4 @@
         <li> I have really felt the benefit of pair programming this week, it has been super helpful to have somebody to talk things through with and bounce ideas off - two heads are better than one!
          </ul>
 
- <p>View the page <a href="https://rachelalk.github.io/Pokemon-API/">here</a></p>
+ <p>View the page <a href="https://panda-weather.netlify.app/">here</a></p>
